@@ -30,16 +30,19 @@ namespace WindowsFormsApplication1
 
 
             // Initialize map:
-            gMapControl.MapProvider = GMap.NET.MapProviders.GoogleMapProvider.Instance;
+            gMapControl.MapProvider = GMap.NET.MapProviders.BingMapProvider.Instance;
             GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
             gMapControl.Position = new GMap.NET.PointLatLng(0,0);
+           // gMapControl.SetPositionByKeywords("Embu, kenya");
 
-
+            //Placing a marker on a certain position
 GMapOverlay markersOverlay = new GMapOverlay("markers");
-            GMarkerGoogle marker = new GMarkerGoogle(new PointLatLng(25.966688, 32.580528),
+            GMarkerGoogle marker = new GMarkerGoogle(new  PointLatLng(0.06, 34.2),
               GMarkerGoogleType.green);
             markersOverlay.Markers.Add(marker);
             gMapControl.Overlays.Add(markersOverlay);
+          
+
         }
     }
     }

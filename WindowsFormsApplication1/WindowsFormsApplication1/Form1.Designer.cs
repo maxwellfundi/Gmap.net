@@ -55,8 +55,10 @@
             this.gMapControl.ShowTileGridLines = false;
             this.gMapControl.Size = new System.Drawing.Size(722, 519);
             this.gMapControl.TabIndex = 0;
-            this.gMapControl.Zoom = 0D;
+            this.gMapControl.Zoom = 2D;
             this.gMapControl.Load += new System.EventHandler(this.gMapControl1_Load);
+            this.gMapControl.AutoScroll = true;
+            this.gMapControl.SetPositionByKeywords("Maseno, Kenya");
             // 
             // Form1
             // 
