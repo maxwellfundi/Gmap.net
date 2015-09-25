@@ -30,7 +30,7 @@ namespace WindowsFormsApplication1
 
 
             // Initialize map:
-            gMapControl.MapProvider = GMap.NET.MapProviders.BingMapProvider.Instance;
+            gMapControl.MapProvider = GMap.NET.MapProviders.GoogleMapProvider.Instance;
             GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
             gMapControl.Position = new GMap.NET.PointLatLng(0,0);
 
