@@ -1,4 +1,7 @@
-﻿using System;
+﻿using GMap.NET;
+using GMap.NET.WindowsForms;
+using GMap.NET.WindowsForms.Markers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,7 +33,14 @@ namespace WindowsFormsApplication1
             gMapControl.MapProvider = GMap.NET.MapProviders.BingMapProvider.Instance;
             GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
             gMapControl.Position = new GMap.NET.PointLatLng(0,0);
+
+
+GMapOverlay markersOverlay = new GMapOverlay("markers");
+            GMarkerGoogle marker = new GMarkerGoogle(new PointLatLng(25.966688, 32.580528),
+              GMarkerGoogleType.green);
+            markersOverlay.Markers.Add(marker);
+            gMapControl.Overlays.Add(markersOverlay);
         }
     }
     }
-}
+
