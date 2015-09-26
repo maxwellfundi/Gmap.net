@@ -33,6 +33,11 @@
             // 
             // gMapControl
             // 
+            this.gMapControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gMapControl.AutoScroll = true;
+            this.gMapControl.AutoSize = true;
             this.gMapControl.Bearing = 0F;
             this.gMapControl.CanDragMap = true;
             this.gMapControl.EmptyTileColor = System.Drawing.Color.Navy;
@@ -41,12 +46,12 @@
             this.gMapControl.LevelsKeepInMemmory = 5;
             this.gMapControl.Location = new System.Drawing.Point(3, 2);
             this.gMapControl.MarkersEnabled = true;
-            this.gMapControl.MaxZoom = 2;
+            this.gMapControl.MaxZoom = 10;
             this.gMapControl.MinZoom = 2;
             this.gMapControl.MouseWheelZoomEnabled = true;
-            this.gMapControl.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.gMapControl.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionWithoutCenter;
             this.gMapControl.Name = "gMapControl";
-            this.gMapControl.NegativeMode = false;
+            this.gMapControl.NegativeMode = true;
             this.gMapControl.PolygonsEnabled = true;
             this.gMapControl.RetryLoadTile = 0;
             this.gMapControl.RoutesEnabled = true;
@@ -55,10 +60,8 @@
             this.gMapControl.ShowTileGridLines = false;
             this.gMapControl.Size = new System.Drawing.Size(722, 519);
             this.gMapControl.TabIndex = 0;
-            this.gMapControl.Zoom = 2D;
+            this.gMapControl.Zoom = 3D;
             this.gMapControl.Load += new System.EventHandler(this.gMapControl1_Load);
-            this.gMapControl.AutoScroll = true;
-            this.gMapControl.SetPositionByKeywords("Maseno, Kenya");
             // 
             // Form1
             // 
@@ -70,6 +73,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
