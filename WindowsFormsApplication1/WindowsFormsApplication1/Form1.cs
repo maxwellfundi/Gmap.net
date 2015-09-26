@@ -38,15 +38,30 @@ namespace WindowsFormsApplication1
             //Placing a marker on a certain position
             GMapOverlay markersOverlay = new GMapOverlay("markers");
             GMarkerGoogle marker = new GMarkerGoogle(new  PointLatLng(0.06, 34.2),
-              GMarkerGoogleType.green);         
-
+              GMarkerGoogleType.green);            
+            marker.ToolTipText = "This is the first marker we put up";
+            marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
             markersOverlay.Markers.Add(marker);
             gMapControl.Overlays.Add(markersOverlay);
 
             GMapOverlay markersOverlaymaseno = new GMapOverlay("markers");
             GMarkerGoogle masenomarker = new GMarkerGoogle(new PointLatLng(45, 45),
               GMarkerGoogleType.blue);
+            masenomarker.ToolTipText = "This is the second marker we put up";
+            masenomarker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
             markersOverlay.Markers.Add(masenomarker);
+            gMapControl.Overlays.Add(markersOverlay);
+
+            markersOverlay.Markers.Add(marker);
+            gMapControl.Overlays.Add(markersOverlay);
+
+            GMapOverlay markersOverlaythird = new GMapOverlay("markers");
+            GMarkerGoogle thirdmarker = new GMarkerGoogle(new PointLatLng(-45, 45),
+              GMarkerGoogleType.red);
+            thirdmarker.ToolTipText = "This is the third marker we put up";
+            thirdmarker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+
+            markersOverlay.Markers.Add(thirdmarker);
             gMapControl.Overlays.Add(markersOverlay);
 
 
