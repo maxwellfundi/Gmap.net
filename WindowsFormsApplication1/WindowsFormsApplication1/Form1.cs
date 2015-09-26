@@ -32,8 +32,8 @@ namespace WindowsFormsApplication1
             // Initialize map:
             gMapControl.MapProvider = GMap.NET.MapProviders.BingMapProvider.Instance;
             GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
-            gMapControl.Position = new GMap.NET.PointLatLng(0,0);
-           // gMapControl.SetPositionByKeywords("Embu, kenya");
+            gMapControl.Position = new GMap.NET.PointLatLng(0.06,34);
+            // gMapControl.SetPositionByKeywords("Embu, kenya");
 
             //Placing a marker on a certain position
 GMapOverlay markersOverlay = new GMapOverlay("markers");
@@ -41,7 +41,22 @@ GMapOverlay markersOverlay = new GMapOverlay("markers");
               GMarkerGoogleType.green);
             markersOverlay.Markers.Add(marker);
             gMapControl.Overlays.Add(markersOverlay);
-          
+
+
+           
+
+            GMapOverlay polyOverlay = new GMapOverlay("polygons");
+            List<PointLatLng> points = new List<PointLatLng>();
+            points.Add(new PointLatLng(-25.969562, 32.585789));
+            points.Add(new PointLatLng(-25.966205, 32.588171));
+            points.Add(new PointLatLng(-25.968134, 32.591647));
+            points.Add(new PointLatLng(-25.971684, 32.589759));
+            GMapPolygon polygon = new GMapPolygon(points, "mypolygon");
+            polygon.Fill = new SolidBrush(Color.FromArgb(50, Color.Red));
+            polygon.Stroke = new Pen(Color.Red, 1);
+            polyOverlay.Polygons.Add(polygon);
+            gMapControl.Overlays.Add(polyOverlay);
+
 
         }
     }
