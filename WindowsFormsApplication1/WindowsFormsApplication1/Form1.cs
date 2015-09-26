@@ -36,14 +36,21 @@ namespace WindowsFormsApplication1
             // gMapControl.SetPositionByKeywords("Embu, kenya");
 
             //Placing a marker on a certain position
-GMapOverlay markersOverlay = new GMapOverlay("markers");
+            GMapOverlay markersOverlay = new GMapOverlay("markers");
             GMarkerGoogle marker = new GMarkerGoogle(new  PointLatLng(0.06, 34.2),
               GMarkerGoogleType.green);
+
+            GMapOverlay markersOverlaymaseno = new GMapOverlay("markers");
+            GMarkerGoogle masenomarker = new GMarkerGoogle(new PointLatLng(45, 45),
+              GMarkerGoogleType.blue);
+
             markersOverlay.Markers.Add(marker);
+            gMapControl.Overlays.Add(markersOverlay);
+          
+            markersOverlay.Markers.Add(masenomarker);
             gMapControl.Overlays.Add(markersOverlay);
 
 
-           
 
             GMapOverlay polyOverlay = new GMapOverlay("polygons");
             List<PointLatLng> points = new List<PointLatLng>();
